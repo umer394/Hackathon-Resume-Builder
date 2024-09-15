@@ -68,17 +68,16 @@ form.addEventListener('submit',(event:Event) => {
                 <p>${experience}</p>
             </div>
             <hr>
-             <div class="grid  grid-cols-1  mt-2" id="skillsSection">
+            <div class="grid  grid-cols-1  mt-2" id="skillsSection">
                 <h1 class="font-bold">Skills</h1>
                 <div class="flex space-x-6 mt-1">
                     <option value="" class="border-2 rounded-lg">${skill1}</option>
                     <option value="" class="border-2 rounded-lg">${skill2}</option>
                     <option value="" class="border-2 rounded-lg">${skill3}</option>
-                  
                 </div>
             </div>
              <div>
-                <button type="button" class="w-full border-2 mt-1 font-bold bg-red-700 hover:bg-red-400" id="toggleSkillsButton">Toggle Skills</button>
+                <button type="button" class="w-full border-2 mt-1 font-bold bg-red-700 hover:bg-black" id="toggleSkillsButton">Toggle Skills</button>
             </div> 
             </div>
         </div>
@@ -86,21 +85,22 @@ form.addEventListener('submit',(event:Event) => {
     `;
     if(resumeDisplayElement){
         resumeDisplayElement.innerHTML = resumeHTML;
+
+        const toggleButton = document.getElementById("toggleSkillsButton") as HTMLButtonElement;
+        const skillsSection = document.getElementById("skillsSection") as HTMLDivElement;
+
+        if (toggleButton && skillsSection) {
+            toggleButton.addEventListener("click", () => {
+                if (skillsSection.style.display === "none" || skillsSection.style.display === "") {
+                    skillsSection.style.display = "block";
+                } else {
+                    skillsSection.style.display = "none";
+                }
+            });
+        }
+
     }else{
         console.error('The Resume display element is missing')
     }
     
 })
-
-const toggleButton = document.getElementById("toggleSkillsButton") as HTMLButtonElement
-const skillsSection = document.getElementById("skillsSection") as HTMLDivElement
-
-function toggleSkills():void{
-    if(skillsSection.style.display === "none" || skillsSection.style.display === ""){
-        skillsSection.style.display = "block"
-    }else{
-        skillsSection.style.display = "none"
-    }
-}
-
-toggleButton.addEventListener("click",toggleSkills)
