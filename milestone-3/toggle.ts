@@ -71,9 +71,9 @@ form.addEventListener('submit',(event:Event) => {
             <div class="grid  grid-cols-1  mt-2" id="skillsSection">
                 <h1 class="font-bold">Skills</h1>
                 <div class="flex space-x-6 mt-1">
-                    <option value="" class="border-2 rounded-lg">${skill1}</option>
-                    <option value="" class="border-2 rounded-lg">${skill2}</option>
-                    <option value="" class="border-2 rounded-lg">${skill3}</option>
+                    <h1 value="" class="border-2 rounded-lg">${skill1}</h1>
+                    <h1 value="" class="border-2 rounded-lg">${skill2}</h1>
+                    <h1 value="" class="border-2 rounded-lg">${skill3}</h1>
                 </div>
             </div>
              <div>
