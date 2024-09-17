@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shareable Resume Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="styles.css" rel="stylesheet"> 
+</head>
+<body class="bg-gray-100 p-4">
+    <h1 class=" text-2xl font-bold w-screen text-center">shareable Resume Builder</h1>
+    <form action="" id="ResumeForm" class="bg-white flex max-w-md mx-auto min-w-fit p-6  shadow-lg rounded-lg">
+        <div class="flex flex-col mx-auto ">
+            <fieldset class="flex flex-col border-2 border-black p-4">
+                <legend class="font-semibold text-center">Personal Information</legend>
+                <label for="name">Name</label>
+                <input type="text" id="name" class="border-2 border-black" required>
+
+                <label for="username">Username</label>
+                <input type="text" id="username" class="border-2 border-black" required>
+                <label for="field">Field</label>
+                <input type="text" id="field" class="border-2 border-black" required>
+            </fieldset>
+            <div class="sm:flex  sm:space-x-20 ">
+                <div class="">
+                    <fieldset class="flex flex-col border-2 border-black p-5">
+                        <legend class="font-semibold text-start mx-20">Contact</legend>
+                        <label for="phone">Number</label>
+                        <input type="number" id="phone" class="border-2 border-black" required>
+                        <label for="email">Email</label>
+                        <input type="text" id="email" class="border-2 border-black" required>
+                     
+                        <label for="url">LinkedIn URL</label>
+                        <input type="url" id="url" class="border-2 border-black" required>
+                    </fieldset>
+                </div>
+                <div>
+                    <fieldset class="flex flex-col border-2 border-black p-2 ">
+                        <legend class="font-semibold text-start mx-28">Summary</legend>
+                        <textarea  id="summary" rows="7" placeholder="Describe Yourself " required></textarea>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="sm:flex sm:space-x-20 mt-4">
+                <div class=" ">
+                    <fieldset class="flex flex-col border-2 border-black p-4">
+                        <legend class="font-semibold text-start mx-20">Education</legend>
+                        <label for="department">Department</label>
+                        <input type="text" id="department" class="border-2 border-black" required>
+                        <textarea  id="department-text" rows="3" class="border-2" required></textarea>
+                        <input type="text" id="department-year" placeholder="Year" class="border-2 border-black" required>
+                    </fieldset>
+                </div>
+                <div>
+                    <fieldset class="flex flex-col border-2 border-black p-2 ">
+                        <legend class="font-semibold text-start mx-28 space-y-8">Projects</legend>
+                        <label for="projectHeading" class="">subject:</label>
+                        <input type="text" id="projectHeading" class="border-2 border-black" required>
+                        <textarea  id="project" rows="4" required></textarea>
+                       
+                    </fieldset>
+                </div>
+            </div>
+            <div>
+                <fieldset class="flex flex-col border-2 border-black p-2 ">
+                    <legend class="font-semibold text-center mx-auto space-y-8">Experience</legend>
+                    <label for="company">Company</label>
+                    <input type="text" id="company" required class="border-black border-2" >
+                    <label for="position">position</label>
+                    <input type="text" id="position" class="border-black border-2" required>
+                    <textarea name="" id="experience" rows="2" class="w-full" required></textarea>
+                </fieldset>
+            </div>
+            <div >
+                <fieldset class="border-2 border-black p-2">
+                    <legend class="grid-rows-2  font-semibold text-center mx-auto space-y-8">Skills</legend>
+                    <input type="text"id="skill-1" class="w-full border-2 border-black mt-1" required>
+                    <input type="text" id="skill-2" class="w-full border-2 border-black mt-1" required>
+                    <input type="text" id="skill-3" class="w-full border-2 border-black mt-1" required>
+                </fieldset>
+            </div>
+            <button type="submit"  class="border-2 border-black max-w-md mx-auto rounded-lg mt-4 p-2 bg-red-700 text-white font-semibold hover:bg-black">Generate Resume</button>
+        </div>
+        
+    </form>
+    <br>
+    <div id="Resume-display" class="p-4 bg-black w-full mx-auto max-w-lg " contenteditable="true">
+
+    </div>
+
+    <div id="shareable-link-div">
+        <h2>shareable-link</h2>
+        <p>Here is your unique link to view or edit your resume</p>
+        <a href="#" id="shareable-link" target="_blank"></a>
+        <br>
+        <button id="download-pdf">Download as PDF</button>
+    </div>
+    <script src="toggle.js"></script>
+</body>
+</html>
