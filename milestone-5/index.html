@@ -8,7 +8,7 @@
     <link href="styles.css" rel="stylesheet"> 
 </head>
 <body class="bg-gray-100 p-4">
-    <h1 class=" text-2xl font-bold w-screen text-center">shareable Resume Builder</h1>
+    <h1 class=" text-2xl font-bold w-screen text-center">Shareable Resume Builder</h1>
     <form action="" id="ResumeForm" class="bg-white flex max-w-md mx-auto min-w-fit p-6  shadow-lg rounded-lg">
         <div class="flex flex-col mx-auto ">
             <fieldset class="flex flex-col border-2 border-black p-4">
@@ -88,12 +88,12 @@
 
     </div>
 
-    <div id="shareable-link-div">
-        <h2>shareable-link</h2>
-        <p>Here is your unique link to view or edit your resume</p>
-        <a href="#" id="shareable-link" target="_blank"></a>
+    <div id="shareable-link-div" class="flex flex-col justify-center items-center bg-black p-4 mt-4 w-full mx-auto max-w-md border-4 rounded-xl border-red-700 shadow-lg shadow-black">
+        <h2 class="text-white font-bold text-2xl">Shareable-Link</h2>
+        <p class="text-white">Here is your unique link to view or edit your resume</p>
+        <a href="#" id="shareable-link" target="_blank" class="text-blue-300"></a>
         <br>
-        <button id="download-pdf">Download as PDF</button>
+        <button id="download-pdf" class="mt-2 text-white bg-red-700 p-2 border-white border-2 ronded-lg font-semibold hover:text-black hover:bg-white">Download as PDF</button>
     </div>
     <script src="toggle.js"></script>
 </body>
