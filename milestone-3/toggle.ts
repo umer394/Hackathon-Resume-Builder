@@ -1,9 +1,8 @@
 const form = document.getElementById('ResumeForm') as HTMLFormElement
-const resumeDisplayElement = document.getElementById('Resume-display') as HTMLDivElement
+const resumeDisplayElement = document.getElementById('Resume-display') as HTMLDivElement 
 
 form.addEventListener('submit',(event:Event) => {
-    event.preventDefault();
-    
+    event.preventDefault();   
     const name = (document.getElementById('name') as HTMLInputElement).value
     const field = (document.getElementById('field') as HTMLInputElement).value
     const phone = (document.getElementById('phone') as HTMLInputElement).value
@@ -32,57 +31,56 @@ form.addEventListener('submit',(event:Event) => {
             <hr>
             <div class="grid sm:grid-cols-2 grid-cols-1 sm:gap-10 gap-5">
                 <div class="">
-                    <h1 class="font-bold">Contact</h1>
+                    <h1 class="font-bold text-xl my-2 text-gray-400">Contact</h1>
                     
-                        <li>${phone}</li>
-                        <li>${email}</li>
-                        <li><a href="${url}">${url}</a></li>
+                        <li class="text-[13px]">${phone}</li>
+                        <li class="text-[13px]">${email}</li>
+                        <li class="text-[13px]"><a href="${url}">${url}</a></li>
                     
                 </div>
                 <div class="">
-                    <h1 class="font-bold">Summary</h1>
-                    <p>${summary}</p>
+                    <h1 class="font-bold text-gray-400">Summary</h1>
+                    <p class="text-[13px]">${summary}</p>
                     
                 </div>
             </div>
             <hr> 
             <div class="grid sm:grid-cols-2 grid-cols-1 sm:gap-10 gap-5">
                 <div>
-                    <h1 class="font-bold">Education</h1>
+                    <h1 class="font-bold text-xl my-2 text-gray-400">Education</h1>
                     <label for="" class="font-semibold">${department}</label>
                     <h2>${departmentText}</h2>
                     <h3>${departmentYear}</h3>
                 </div>
                 <div>
-                    <h1 class="font-bold">Projects</h1>
+                    <h1 class="font-bold text-xl my-2 text-gray-400">Projects</h1>
                     <label for="" class="font-semibold">${projectHeading}</label>
-                    <p>${project}</p>
+                    <p class="text-[13px]">${project}</p>
                     
                 </div>
             </div>
             <hr> 
             <div class="grid  grid-cols-1  mt-4">
-                <h1 class=font-bold>Experience</h1>
-                <h1 class=font-semibold>${expCompany}</h1>
-                <h1 class=font-semibold>${expPosition}</h1>
-                <p>${experience}</p>
+                <h1 class="font-bold text-xl my-2 text-gray-400">Experience</h1>
+                <h1 class="font-semibold">${expCompany}</h1>
+                <h1 class="font-semibold">${expPosition}</h1>
+                <p class="text-[13px]">${experience}</p>
             </div>
             <hr>
-            <div class="grid  grid-cols-1  mt-2" id="skillsSection">
-                <h1 class="font-bold">Skills</h1>
+             <div class="grid  grid-cols-1  mt-2" id="skillsSection">
+                <h1 class="font-bold text-xl my-2 text-gray-400">Skills</h1>
                 <div class="flex space-x-6 mt-1">
-                    <h1 value="" class="border-2 rounded-lg">${skill1}</h1>
-                    <h1 value="" class="border-2 rounded-lg">${skill2}</h1>
-                    <h1 value="" class="border-2 rounded-lg">${skill3}</h1>
+                    <h1 value="" class=" rounded-lg p-1 bg-gray-800 ">${skill1}</h1>
+                    <h1 value="" class="rounded-lg p-1 bg-gray-800">${skill2}</h1>
+                    <h1 value="" class="rounded-lg p-1 bg-gray-800">${skill3}</h1>
                 </div>
             </div>
-             <div>
-                <button type="button" class="w-full border-2 mt-1 font-bold bg-red-700 hover:bg-black" id="toggleSkillsButton">Toggle Skills</button>
+             <div class="mt-2">
+                <button type="button" class="w-full border-2 mt-1 font-bold bg-gray-700 hover:bg-black" id="toggleSkillsButton">Toggle Skills</button>
             </div> 
             </div>
         </div>
-    </form>
-    `;
+    </form>`;
     if(resumeDisplayElement){
         resumeDisplayElement.innerHTML = resumeHTML;
 

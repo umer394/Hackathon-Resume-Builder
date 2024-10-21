@@ -7,76 +7,76 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="styles.css" rel="stylesheet"> 
 </head>
-<body class="bg-gray-100 p-4">
-    <h1 class=" text-2xl font-bold w-screen text-center">Dynamic Resume Builder</h1>
-    <form action="" id="ResumeForm" class="bg-white flex max-w-md mx-auto min-w-fit p-6  shadow-lg rounded-lg">
-        <div class="flex flex-col mx-auto ">
+<body class=" bg-gray-800 p-4">
+    <h1 class=" text-[22px] md:text-2xl lg:text-3xl font-bold flex justify-center items-center text-white">Dynamic Resume Builder</h1>
+    <form action="" id="ResumeForm" class="bg-gray-600 flex max-w-md mx-auto min-w-fit p-6  shadow-lg rounded-lg">
+        <div class="flex flex-col mx-auto">
             <fieldset class="flex flex-col border-2 border-black p-4">
-                <legend class="font-semibold text-center">Personal Information</legend>
-                <label for="name">Name</label>
-                <input type="text" id="name" class="border-2 border-black" required>
-                <label for="field">Field</label>
-                <input type="text" id="field" class="border-2 border-black" required>
+                <legend class="font-bold text-center text-2xl">Personal Information</legend>
+                <label for="name" class="text-white">Name</label>
+                <input type="text" id="name" placeholder="Enter your name..." class="border-2 border-black placeholder:text-white text-white bg-black placeholder:text-sm focus:bg-black" required>
+                <label for="field" class="text-white">Field</label>
+                <input type="text" id="field" placeholder="Enter your field..." class="border-2 border-black bg-black placeholder:text-white text-white placeholder:text-sm" required>
             </fieldset>
-            <div class="sm:flex  sm:space-x-20 ">
+            <div class="sm:flex  sm:space-x-20">
                 <div class="">
                     <fieldset class="flex flex-col border-2 border-black p-5">
-                        <legend class="font-semibold text-start mx-20">Contact</legend>
-                        <label for="phone">Number</label>
-                        <input type="number" id="phone" class="border-2 border-black" required>
-                        <label for="email">Email</label>
-                        <input type="text" id="email" class="border-2 border-black" required>
+                        <legend class="font-bold text-start mx-20 ">Contact</legend>
+                        <label for="phone" class="text-white font-bold">Number</label>
+                        <input type="number" id="phone" placeholder="Enter your phone..." class="border-2 border-black bg-black placeholder:text-white text-white placeholder:text-sm" required>
+                        <label for="email" class="text-white font-bold">Email</label>
+                        <input type="text" id="email" placeholder="Enter your email..." class="border-2 border-black bg-black placeholder:text-white text-white placeholder:text-sm" required>
                      
-                        <label for="url">LinkedIn URL</label>
-                        <input type="url" id="url" class="border-2 border-black" required>
+                        <label for="url" class="text-white font-bold">LinkedIn URL</label>
+                        <input type="url" id="url" placeholder="Enter your url..." class="border-2 border-black bg-black placeholder:text-white text-white placeholder:text-sm" required>
                     </fieldset>
                 </div>
-                <div>
+                <div class="max-div-md">
                     <fieldset class="flex flex-col border-2 border-black p-2 ">
-                        <legend class="font-semibold text-start mx-28">Summary</legend>
-                        <textarea  id="summary" rows="7" placeholder="Describe Yourself " required></textarea>
+                        <legend class="font-bold text-start mx-28 ">Summary</legend>
+                        <textarea  id="summary" rows="7" placeholder="Describe Yourself..... " class="bg-black text-white placeholder:text-white placeholder:text-sm"></textarea>
                     </fieldset>
                 </div>
             </div>
             <div class="sm:flex sm:space-x-20 mt-4">
                 <div class=" ">
                     <fieldset class="flex flex-col border-2 border-black p-4">
-                        <legend class="font-semibold text-start mx-20">Education</legend>
-                        <label for="department">Department</label>
-                        <input type="text" id="department" class="border-2 border-black" required>
-                        <textarea  id="department-text" rows="3" class="border-2" required></textarea>
-                        <input type="text" id="department-year" placeholder="Year" class="border-2 border-black" required>
+                        <legend class="font-bold text-start mx-20">Education</legend>
+                        <label for="department" class="text-white font-bold">Department</label>
+                        <input type="text" id="department" placeholder="Enter your department..." class="border-2 bg-black placeholder:text-white text-white border-black placeholder:text-sm" required>
+                        <textarea  id="department-text" rows="3"  placeholder="description..." class="my-1 bg-black placeholder:text-white text-white placeholder:text-sm" required></textarea>
+                        <input type="text" id="department-year" placeholder="Year" class="border-2 border-black bg-black placeholder:text-white text-white" required>
                     </fieldset>
                 </div>
                 <div>
-                    <fieldset class="flex flex-col border-2 border-black p-2 ">
-                        <legend class="font-semibold text-start mx-28 space-y-8">Projects</legend>
-                        <label for="projectHeading" class="">subject:</label>
-                        <input type="text" id="projectHeading" class="border-2 border-black" required>
-                        <textarea  id="project" rows="4" required></textarea>
+                    <fieldset class="flex flex-col border-2 border-black p-2">
+                        <legend class="font-bold text-start mx-28 space-y-8">Projects</legend>
+                        <label for="projectHeading" class="text-white font-bold">Subject:</label>
+                        <input type="text" id="projectHeading" placeholder="Domain" class="border-2 border-black bg-black placeholder:text-white text-white placeholder:text-sm" required>
+                        <textarea  id="project" rows="4" placeholder="project description" class="bg-black mt-3 placeholder:text-white text-white placeholder:text-sm" required></textarea>
                        
                     </fieldset>
                 </div>
             </div>
             <div>
                 <fieldset class="flex flex-col border-2 border-black p-2 ">
-                    <legend class="font-semibold text-center mx-auto space-y-8">Experience</legend>
-                    <label for="company">Company</label>
-                    <input type="text" id="company" required class="border-black border-2" >
-                    <label for="position">position</label>
-                    <input type="text" id="position" class="border-black border-2" required>
-                    <textarea name="" id="experience" rows="2" class="w-full" required></textarea>
+                    <legend class="font-bold text-center mx-auto space-y-8">Experience:</legend>
+                    <label for="company" class="text-white font-bold">Company:</label>
+                    <input type="text" id="company" placeholder="company" required class="border-black border-2 bg-black placeholder:text-white text-white placeholder:text-sm" >
+                    <label for="position" class="text-white font-bold">Position</label>
+                    <input type="text" id="position" placeholder="position" class="border-black border-2 bg-black placeholder:text-white text-white placeholder:text-sm" required>
+                    <textarea name="" id="experience" placeholder="experience" rows="2" class="w-full mt-1 bg-black placeholder:text-white text-white placeholder:text-sm" required></textarea>
                 </fieldset>
             </div>
             <div >
                 <fieldset class="border-2 border-black p-2">
-                    <legend class="grid-rows-2  font-semibold text-center mx-auto space-y-8">Skills</legend>
-                    <input type="text"id="skill-1" class="w-full border-2 border-black mt-1" required>
-                    <input type="text" id="skill-2" class="w-full border-2 border-black mt-1" required>
-                    <input type="text" id="skill-3" class="w-full border-2 border-black mt-1" required>
+                    <legend class="grid-rows-2 text-center mx-auto space-y-8 font-bold">Skills</legend>
+                    <input type="text"id="skill-1" placeholder="skill-1" class="w-full border-2 border-black mt-1 bg-black placeholder:text-white text-white" required>
+                    <input type="text" id="skill-2" placeholder="skill-2" class="w-full border-2 border-black mt-1 bg-black placeholder:text-white text-white" required>
+                    <input type="text" id="skill-3" placeholder="skill-3" class="w-full border-2 border-black mt-1 bg-black placeholder:text-white text-white" required>
                 </fieldset>
             </div>
-            <button type="submit"  class="border-2 border-black max-w-md mx-auto rounded-lg mt-4 p-2 bg-red-700 text-white font-semibold hover:bg-black">Generate Resume</button>
+            <button type="submit"  class="border-2 border-black max-w-md mx-auto rounded-lg mt-4 p-2 bg-gray-800 text-white font-semibold hover:bg-black">Generate Resume</button>
         </div>
         
     </form>

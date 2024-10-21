@@ -1,7 +1,6 @@
 const form = document.getElementById('ResumeForm') as HTMLFormElement
 const resumeDisplayElement = document.getElementById('Resume-display') as HTMLDivElement
-const toggleButton = document.getElementById("toggleSkillsButton") as HTMLButtonElement;
-const skillsSection = document.getElementById("skillsSection") as HTMLDivElement;
+
 const shareableLinkDiv = document.getElementById('shareable-link-div') as HTMLDivElement
 const shareableLink = document.getElementById('shareable-link') as HTMLAnchorElement
 const downloadPdf = document.getElementById('download-pdf') as HTMLButtonElement
@@ -10,7 +9,7 @@ const downloadPdf = document.getElementById('download-pdf') as HTMLButtonElement
 form.addEventListener('submit',(event:Event) => {
     event.preventDefault();
     
-    const username = (document.getElementById('username') as HTMLInputElement).value
+    const username = (document.getElementById('Username') as HTMLInputElement).value
     const name = (document.getElementById('name') as HTMLInputElement).value
     const field = (document.getElementById('field') as HTMLInputElement).value
     const phone = (document.getElementById('phone') as HTMLInputElement).value
@@ -40,95 +39,104 @@ form.addEventListener('submit',(event:Event) => {
         <div class="flex flex-col justify-between mx-auto">
             <div class="mt-5 justify-start items-start">
                 <h1 class="text-3xl font-semibold"><span contenteditable="true">${name}</span></h1>
-                <h1 class="text-3xl font-semibold"><span contenteditable="true">${username}</span></h1>
+                <h1 class="text-xl font-semibold"><span contenteditable="true">${username}</span></h1>
                 <p><span contenteditable="true">${field}</span></p>
             </div>
             <hr>
             <div class="grid sm:grid-cols-2 grid-cols-1 sm:gap-10 gap-5">
                 <div class="">
-                    <h1 class="font-bold">Contact</h1>
+                    <h1 class="font-bold text-xl my-2 text-gray-400">Contact</h1>
                     
-                        <li><span contenteditable="true">${phone}</span></li>
-                        <li><span contenteditable="true">${email}</span></li>
-                        <li><a href="${url}"><span contenteditable="true">${url}</span></a></li>
+                        <li class="text-[13px]"><span contenteditable="true">${phone}</span></li>
+                        <li class="text-[13px]"><span contenteditable="true">${email}</span></li>
+                        <li class="text-[13px]"><a href="${url}"><span contenteditable="true">${url}</span></a></li>
                     
                 </div>
                 <div class="">
-                    <h1 class="font-bold">Summary</h1>
-                    <p><span contenteditable="true">${summary}</span></p>
+                    <h1 class="font-bold text-gray-400">Summary</h1>
+                    <p class="text-[13px]"><span contenteditable="true">${summary}</span></p>
                     
                 </div>
             </div>
             <hr> 
             <div class="grid sm:grid-cols-2 grid-cols-1 sm:gap-10 gap-5">
                 <div>
-                    <h1 class="font-bold">Education</h1>
+                    <h1 class="font-bold text-xl my-2 text-gray-400">Education</h1>
                     <label for="" class="font-semibold"><span contenteditable="true">${department}</span></label>
-                    <h2><span contenteditable="true"><span contenteditable="true">${departmentText}</span></h2>
-                    <h3><span contenteditable="true"><span contenteditable="true">${departmentYear}</span></h3>
+                    <h2><span contenteditable="true">${departmentText}</span></h2>
+                    <h3><span contenteditable="true">${departmentYear}</span></h3>
                 </div>
                 <div>
-                    <h1 class="font-bold">Projects</h1>
+                    <h1 class="font-bold text-xl my-2 text-gray-400">Projects</h1>
                     <label for="" class="font-semibold"><span contenteditable="true">${projectHeading}</span></label>
-                    <p><span contenteditable="true">${project}</span></p>
+                    <p class="text-[13px]"><span contenteditable="true">${project}</span></p>
                     
                 </div>
             </div>
             <hr> 
             <div class="grid  grid-cols-1  mt-4">
-                <h1 class=font-bold>Experience</h1>
-                <h1 class=font-semibold><span contenteditable="true">${expCompany}</span></h1>
-                <h1 class=font-semibold><span contenteditable="true">${expPosition}</span></h1>
-                <p><span contenteditable="true">${experience}</span></p>
+                <h1 class="font-bold text-xl my-2 text-gray-400">Experience</h1>
+                <h1 class="font-semibold"><span contenteditable="true">${expCompany}</span></h1>
+                <h1 class="font-semibold"><span contenteditable="true">${expPosition}</span></h1>
+                <p class="text-[13px]"><span contenteditable="true">${experience}</span></p>
             </div>
             <hr>
-            <div class="grid  grid-cols-1  mt-2" id="skillsSection">
-                <h1 class="font-bold">Skills</h1>
+             <div class="grid  grid-cols-1  mt-2" id="skillsSection">
+                <h1 class="font-bold text-xl my-2 text-gray-400">Skills</h1>
                 <div class="flex space-x-6 mt-1">
-                    <h1 value="" class="border-2 rounded-lg"><span contenteditable="true">${skill1}</span></h1>
-                    <h1 value="" class="border-2 rounded-lg"><span contenteditable="true">${skill2}</span></h1>
-                    <h1 value="" class="border-2 rounded-lg"><span contenteditable="true">${skill3}</span></h1>
+                    <h1 value="" class=" rounded-lg p-1 bg-gray-800 "><span contenteditable="true">${skill1}</span></h1>
+                    <h1 value="" class="rounded-lg p-1 bg-gray-800"><span contenteditable="true">${skill2}</span></h1>
+                    <h1 value="" class="rounded-lg p-1 bg-gray-800"><span contenteditable="true">${skill3}</span></h1>
                 </div>
             </div>
-             <div>
-                <button type="button" class="w-full border-2 mt-1 font-bold bg-red-700 hover:bg-black" id="toggleSkillsButton"><span contenteditable="false">Toggle Skills</span></button>
+             <div class="mt-2">
+                <button type="button" class="w-full border-2 mt-1 font-bold bg-gray-700 hover:bg-black" contenteditable="false" id="toggleSkillsButton">Toggle Skills</button>
             </div> 
             </div>
         </div>
-    </form>
-    `;
-    // if(resumeDisplayElement){
+    </form>`;
+    if(resumeDisplayElement){
         resumeDisplayElement.innerHTML = resumeHTML;
+        const toggleButton = document.getElementById("toggleSkillsButton") as HTMLButtonElement;
+        const skillsSection = document.getElementById("skillsSection") as HTMLDivElement;
 
         if (toggleButton && skillsSection) {
             toggleButton.addEventListener("click", () => {
-                skillsSection.style.display=skillsSection.style.display === "none" ? "block" : "none"
-                
+                if (skillsSection.style.display === "none" || skillsSection.style.display === "") {
+                    skillsSection.style.display = "block";
+                } else {
+                    skillsSection.style.display = "none";
+                }
             });
         }
-
-        const shareableUrl = `${window.location.origin}${window.location.pathname}?username=${encodeURIComponent(username)}`
+    }
+        const shareableUrl = `${window.location.origin}/?username=${encodeURIComponent(username)}`;
 
         shareableLinkDiv.style.display = 'block'
         shareableLink.href = shareableUrl
         shareableLink.textContent = shareableUrl
 
+        const urlParams = new URLSearchParams(window.location.search);
+        const Username = urlParams.get('username');
+        console.log(Username);
 
-    // }else{
-    //     console.error('The Resume display element is missing')
-    // }
+    
 })
 
-downloadPdf.addEventListener('click',()=>{
+downloadPdf.addEventListener('click',()=>{      
     window.print() 
 })
 
 window.addEventListener('DOMContentLoaded',()=>{
     const urlParams = new URLSearchParams(window.location.search);
-    const username = urlParams.get('username')
+    console.log(urlParams.toString())
+   
+    const username = urlParams.get('username');
+    
     if(username){
         const savedResumeData = localStorage.getItem(username);
         if(savedResumeData){
+            
             const resumeData:any = JSON.parse(savedResumeData)
             (document.getElementById('username') as HTMLInputElement).value = username;
             (document.getElementById('name') as HTMLInputElement).value = resumeData.name;
@@ -150,5 +158,7 @@ window.addEventListener('DOMContentLoaded',()=>{
             (document.getElementById('skill-3') as HTMLInputElement).value = resumeData.skill3;
             (document.getElementById('experience') as HTMLTextAreaElement).value = resumeData.experience;
         }
+
     }
+
 })
